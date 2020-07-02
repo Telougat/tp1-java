@@ -34,8 +34,11 @@ public class Compte {
 
         Compte com1 = new Compte(10,c1);
         Compte com2 = new Compte(20,c2);
-        System.out.println(com1);
-        System.out.println(com2);
+
+        c1.addCompte(com1);
+        //c1.addCompte(com2);
+        System.out.println(c1);
+        System.out.println(c2);
     }
 
     public void credit(float ajout_solde) {

@@ -12,6 +12,7 @@ public class Client {
     {
         this.numero = numero;
         this.nom = nom;
+        this.comptes = new ArrayList<>();
     }
 
     public long getNumero()
@@ -33,10 +34,12 @@ public class Client {
     }*/
 
     public String toString() {
-        String infos = new String();
-        infos = "Client "+this.numero+" - "+this.nom+"\n";
-        this.comptes.forEach((compte) -> infos = infos+"Compte n°"+compte.getNumero()+" - solde : "+compte.getSolde());
-        return infos;
+        StringBuilder infos = new StringBuilder();
+        infos.append("Client ").append(this.numero).append(" - ").append(this.nom).append("\n");
+        for (Compte compte : this.comptes) {
+            infos.append("Compte n°").append(compte.getNumero()).append(" - solde : ").append(compte.getSolde());
+        }
+        return infos.toString();
     }
 
     public void addCompte(Compte c) {
