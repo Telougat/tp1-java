@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Compte {
     private long numero;
     private Client client;
@@ -34,5 +36,9 @@ public class Compte {
         Compte com2 = new Compte(20,c2);
         System.out.println(com1);
         System.out.println(com2);
+    }
+
+    public void credit(float ajout_solde) {
+        this.solde = this.solde+ajout_solde;
     }
 }
