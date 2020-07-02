@@ -36,8 +36,14 @@ public class Client {
     public String toString() {
         StringBuilder infos = new StringBuilder();
         infos.append("Client ").append(this.numero).append(" - ").append(this.nom).append("\n");
+
+        if(this.comptes.isEmpty()) {
+            infos.append("pas de compte rattaché à ce client\n");
+            return infos.toString();
+        }
+
         for (Compte compte : this.comptes) {
-            infos.append("Compte n°").append(compte.getNumero()).append(" - solde : ").append(compte.getSolde());
+            infos.append("Compte n°").append(compte.getNumero()).append(" - solde : ").append(compte.getSolde()).append("\n");
         }
         return infos.toString();
     }
